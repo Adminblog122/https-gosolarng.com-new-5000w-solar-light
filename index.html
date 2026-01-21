@@ -4,9 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nova Elite | Premium Lifestyle & Tech</title>
+    <!-- Performance Optimization: DNS Prefetch -->
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+    <link rel="dns-prefetch" href="https://images.unsplash.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@600;800&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --brand-primary: #6366f1;
@@ -17,35 +23,38 @@
             scroll-behavior: smooth; 
             overflow-x: hidden; 
             background-color: #fcfcfd;
+            -webkit-font-smoothing: antialiased;
         }
         h1, h2, h3, .brand-font { font-family: 'Outfit', sans-serif; }
         
         .glass-nav { 
             background: rgba(255, 255, 255, 0.85); 
-            backdrop-filter: blur(20px); 
-            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(12px); 
+            -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(0,0,0,0.05); 
         }
         
         .cart-sidebar { 
-            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1); 
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); 
             width: 100%;
+            will-change: transform;
         }
         @media (min-width: 640px) { .cart-sidebar { width: 420px; } }
         .cart-open { transform: translateX(0) !important; }
         
         .product-card {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            will-change: transform;
         }
         @media (hover: hover) {
             .product-card:hover {
-                transform: translateY(-8px);
-                box-shadow: 0 20px 40px -15px rgba(0,0,0,0.08);
+                transform: translateY(-5px);
+                box-shadow: 0 15px 30px -10px rgba(0,0,0,0.08);
             }
         }
         
         .category-pill {
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
             border: 1px solid #e2e8f0;
         }
         .category-pill.active { 
@@ -54,8 +63,8 @@
             border-color: var(--brand-dark);
         }
 
-        .view { transition: opacity 0.4s ease, transform 0.4s ease; }
-        .view-hidden { opacity: 0; transform: translateY(15px); pointer-events: none; display: none; }
+        .view { transition: opacity 0.3s ease; }
+        .view-hidden { opacity: 0; pointer-events: none; display: none; }
         
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
@@ -76,11 +85,7 @@
             justify-content: center;
             width: 60px;
             height: 60px;
-            transition: all 0.3s ease;
-        }
-        .wa-float:hover {
-            transform: scale(1.1);
-            background-color: #128c7e;
+            transition: transform 0.3s ease;
         }
         .wa-pulse {
             position: absolute;
@@ -92,8 +97,8 @@
             animation: pulse-wa 2s infinite;
         }
         @keyframes pulse-wa {
-            0% { transform: scale(1); opacity: 0.8; }
-            100% { transform: scale(1.8); opacity: 0; }
+            0% { transform: scale(1); opacity: 0.6; }
+            100% { transform: scale(1.6); opacity: 0; }
         }
 
         @media (max-width: 640px) {
@@ -104,7 +109,7 @@
 <body class="text-slate-900">
 
     <!-- Floating Animated WhatsApp -->
-    <a href="javascript:void(0)" onclick="directWhatsApp('General Inquiry', 0)" class="wa-float">
+    <a href="javascript:void(0)" onclick="directWhatsApp('General Inquiry', 0)" class="wa-float" aria-label="Contact on WhatsApp">
         <div class="wa-pulse"></div>
         <i class="fa-brands fa-whatsapp"></i>
     </a>
@@ -146,12 +151,15 @@
 
     <!-- HOME VIEW -->
     <main id="home-view" class="view">
-        <!-- Hero Section with Beautiful Banana Image -->
         <section class="pt-20 md:pt-28 pb-8 px-4 sm:px-6">
             <div class="max-w-7xl mx-auto">
-                <div class="relative rounded-[2rem] md:rounded-[2.5rem] bg-slate-900 overflow-hidden min-h-[450px] md:min-h-[600px] flex items-center p-6 sm:p-12 md:p-20 shadow-2xl">
-                    <img src="https://images.unsplash.com/photo-1571771894821-ad990241274d?q=80&w=2080&auto=format&fit=crop" alt="Premium Bananas" class="absolute inset-0 w-full h-full object-cover opacity-60">
-                    <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/60 to-transparent"></div>
+                <div class="relative rounded-[2rem] md:rounded-[2.5rem] bg-slate-950 overflow-hidden min-h-[450px] md:min-h-[600px] flex items-center p-6 sm:p-12 md:p-20 shadow-2xl">
+                    <!-- Optimized Image Load -->
+                    <img src="https://images.unsplash.com/photo-1571771894821-ad990241274d?q=60&w=1200&auto=format&fit=crop" 
+                         alt="Premium Bananas" 
+                         class="absolute inset-0 w-full h-full object-cover opacity-60"
+                         fetchpriority="high">
+                    <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/70 to-transparent"></div>
                     
                     <div class="relative z-10 max-w-2xl">
                         <div class="flex items-center gap-3 mb-4 md:mb-6">
@@ -171,7 +179,6 @@
             </div>
         </section>
 
-        <!-- Main Product Grid -->
         <section id="shop" class="py-12 md:py-20 px-4 sm:px-6">
             <div class="max-w-7xl mx-auto">
                 <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 md:mb-16">
@@ -188,7 +195,7 @@
                 </div>
 
                 <div id="product-grid" class="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
-                    <!-- Products dynamically rendered -->
+                    <!-- Rendered by JS -->
                 </div>
             </div>
         </section>
@@ -204,7 +211,7 @@
                 <h2 class="text-2xl md:text-4xl font-extrabold tracking-tight">Elite Catalog</h2>
             </div>
             <div id="catalog-grid" class="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
-                <!-- 12 Catalog items rendered here -->
+                <!-- Rendered by JS -->
             </div>
         </div>
     </main>
@@ -220,7 +227,7 @@
                 <i class="fa-solid fa-xmark text-lg"></i>
             </button>
         </div>
-        <div id="cart-items" class="flex-grow overflow-y-auto p-4 md:p-8 space-y-4 md:space-y-6"></div>
+        <div id="cart-items" class="flex-grow overflow-y-auto p-4 md:p-8 space-y-4 md:space-y-6 no-scrollbar"></div>
         <div class="p-6 md:p-8 bg-white border-t space-y-4 md:space-y-6">
             <div class="flex justify-between items-center px-2">
                 <span class="text-slate-500 font-semibold text-sm">Subtotal</span>
@@ -240,10 +247,10 @@
                 <button onclick="closeCheckout()"><i class="fa-solid fa-xmark"></i></button>
             </div>
             <form id="wa-form" class="space-y-4">
-                <input type="text" id="name" required class="w-full px-4 py-3 bg-slate-50 border rounded-xl outline-none" placeholder="Your Name">
-                <input type="tel" id="phone" required class="w-full px-4 py-3 bg-slate-50 border rounded-xl outline-none" placeholder="Phone Number">
-                <textarea id="address" required class="w-full px-4 py-3 bg-slate-50 border rounded-xl outline-none h-24" placeholder="Delivery Address"></textarea>
-                <button type="submit" class="w-full bg-[#25d366] text-white py-4 rounded-xl font-bold flex items-center justify-center gap-2">
+                <input type="text" id="name" required class="w-full px-4 py-3 bg-slate-50 border rounded-xl outline-none focus:border-indigo-500 transition" placeholder="Your Name">
+                <input type="tel" id="phone" required class="w-full px-4 py-3 bg-slate-50 border rounded-xl outline-none focus:border-indigo-500 transition" placeholder="Phone Number">
+                <textarea id="address" required class="w-full px-4 py-3 bg-slate-50 border rounded-xl outline-none h-24 focus:border-indigo-500 transition" placeholder="Delivery Address"></textarea>
+                <button type="submit" class="w-full bg-[#25d366] text-white py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-[#1ebd5e] transition">
                     <i class="fa-brands fa-whatsapp"></i> Send Order to WhatsApp
                 </button>
             </form>
@@ -254,25 +261,25 @@
         const WHATSAPP_NUMBER = "2348145481614";
 
         const PRODUCTS = [
-            { id: 1, name: "Vanguard Tech Watch", price: 349.00, cat: "Tech", img: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=600" },
-            { id: 2, name: "Stealth Audio Buds", price: 189.00, cat: "Tech", img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=600" },
-            { id: 3, name: "Urban Slate Backpack", price: 125.00, cat: "Lifestyle", img: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?q=80&w=600" },
-            { id: 4, name: "Noir Desk Setup", price: 89.99, cat: "Accessories", img: "https://images.unsplash.com/photo-1534073828943-f801091bb18c?q=80&w=600" },
-            { id: 5, name: "Carbon Fiber Wallet", price: 55.00, cat: "Accessories", img: "https://images.unsplash.com/photo-1627123424574-724758594e93?q=80&w=600" },
-            { id: 6, name: "Drone S2 Pro", price: 599.00, cat: "Tech", img: "https://images.unsplash.com/photo-1473968512647-3e44a224fe8f?q=80&w=600" },
-            { id: 7, name: "Evo Coffee Press", price: 79.00, cat: "Lifestyle", img: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=600" },
-            { id: 8, name: "Monolith Sunwear", price: 110.00, cat: "Lifestyle", img: "https://images.unsplash.com/photo-1511499767390-90342f16b117?q=80&w=600" }
+            { id: 1, name: "Vanguard Tech Watch", price: 349.00, cat: "Tech", img: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=60&w=400" },
+            { id: 2, name: "Stealth Audio Buds", price: 189.00, cat: "Tech", img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=60&w=400" },
+            { id: 3, name: "Urban Slate Backpack", price: 125.00, cat: "Lifestyle", img: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?q=60&w=400" },
+            { id: 4, name: "Noir Desk Setup", price: 89.99, cat: "Accessories", img: "https://images.unsplash.com/photo-1534073828943-f801091bb18c?q=60&w=400" },
+            { id: 5, name: "Carbon Fiber Wallet", price: 55.00, cat: "Accessories", img: "https://images.unsplash.com/photo-1627123424574-724758594e93?q=60&w=400" },
+            { id: 6, name: "Drone S2 Pro", price: 599.00, cat: "Tech", img: "https://images.unsplash.com/photo-1473968512647-3e44a224fe8f?q=60&w=400" },
+            { id: 7, name: "Evo Coffee Press", price: 79.00, cat: "Lifestyle", img: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=60&w=400" },
+            { id: 8, name: "Monolith Sunwear", price: 110.00, cat: "Lifestyle", img: "https://images.unsplash.com/photo-1511499767390-90342f16b117?q=60&w=400" }
         ];
 
         const CATALOG_ITEMS = [
             ...PRODUCTS,
-            { id: 9, name: "Titanium Keyboard", price: 210.00, cat: "Tech", img: "https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?q=80&w=600" },
-            { id: 10, name: "Minimalist Lamp", price: 65.00, cat: "Accessories", img: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?q=80&w=600" },
-            { id: 11, name: "Premium Leather Pad", price: 45.00, cat: "Lifestyle", img: "https://images.unsplash.com/photo-1589182337358-2cb63099350c?q=80&w=600" },
-            { id: 12, name: "Sonic Speaker", price: 129.00, cat: "Tech", img: "https://images.unsplash.com/photo-1608156639585-340049e59c73?q=80&w=600" }
+            { id: 9, name: "Titanium Keyboard", price: 210.00, cat: "Tech", img: "https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?q=60&w=400" },
+            { id: 10, name: "Minimalist Lamp", price: 65.00, cat: "Accessories", img: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?q=60&w=400" },
+            { id: 11, name: "Premium Leather Pad", price: 45.00, cat: "Lifestyle", img: "https://images.unsplash.com/photo-1589182337358-2cb63099350c?q=60&w=400" },
+            { id: 12, name: "Sonic Speaker", price: 129.00, cat: "Tech", img: "https://images.unsplash.com/photo-1608156639585-340049e59c73?q=60&w=400" }
         ];
 
-        let cart = JSON.parse(localStorage.getItem('nova_cart_v5')) || [];
+        let cart = JSON.parse(localStorage.getItem('nova_cart_v6')) || [];
 
         function directWhatsApp(itemName, price) {
             let text = price > 0 ? `Hi Nova Elite, I want to order "${itemName}" ($${price.toFixed(2)}).` : `Hi Nova Elite, I'm interested in your services.`;
@@ -284,10 +291,10 @@
             const catalog = document.getElementById('catalog-view');
             if(viewId === 'home') {
                 catalog.classList.add('view-hidden');
-                setTimeout(() => { catalog.style.display = 'none'; home.style.display = 'block'; home.classList.remove('view-hidden'); }, 400);
+                setTimeout(() => { catalog.style.display = 'none'; home.style.display = 'block'; home.classList.remove('view-hidden'); }, 300);
             } else {
                 home.classList.add('view-hidden');
-                setTimeout(() => { home.style.display = 'none'; catalog.style.display = 'block'; catalog.classList.remove('view-hidden'); renderCatalog(); }, 400);
+                setTimeout(() => { home.style.display = 'none'; catalog.style.display = 'block'; catalog.classList.remove('view-hidden'); renderCatalog(); }, 300);
             }
         }
 
@@ -295,11 +302,11 @@
             const grid = document.getElementById('catalog-grid');
             grid.innerHTML = CATALOG_ITEMS.map(p => `
                 <div class="product-card bg-white rounded-3xl p-4 shadow-sm border">
-                    <img src="${p.img}" class="w-full aspect-square object-cover rounded-2xl mb-4">
+                    <img src="${p.img}" loading="lazy" class="w-full aspect-square object-cover rounded-2xl mb-4" alt="${p.name}">
                     <h3 class="font-bold text-lg mb-1">${p.name}</h3>
                     <div class="flex justify-between items-center">
                         <span class="text-xl font-black">$${p.price.toFixed(2)}</span>
-                        <button onclick="addToCart(${p.id})" class="bg-slate-900 text-white px-4 py-2 rounded-xl text-xs font-bold">Add to Bag</button>
+                        <button onclick="addToCart(${p.id})" class="bg-slate-900 text-white px-4 py-2 rounded-xl text-xs font-bold hover:bg-indigo-600 transition">Add to Bag</button>
                     </div>
                 </div>
             `).join('');
@@ -311,9 +318,9 @@
             grid.innerHTML = items.map(p => `
                 <div class="product-card bg-white rounded-[2rem] p-4 border shadow-sm group">
                     <div class="relative overflow-hidden rounded-2xl mb-4">
-                        <img src="${p.img}" class="w-full aspect-square object-cover group-hover:scale-105 transition">
+                        <img src="${p.img}" loading="lazy" class="w-full aspect-square object-cover group-hover:scale-105 transition duration-500" alt="${p.name}">
                         <div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition flex items-end p-3">
-                            <button onclick="addToCart(${p.id})" class="w-full bg-slate-900 text-white py-3 rounded-xl font-bold text-xs">Add to Bag</button>
+                            <button onclick="addToCart(${p.id})" class="w-full bg-slate-900 text-white py-3 rounded-xl font-bold text-xs hover:bg-indigo-600 transition">Add to Bag</button>
                         </div>
                     </div>
                     <h3 class="font-bold text-base truncate">${p.name}</h3>
@@ -331,7 +338,7 @@
         }
 
         function saveCart() {
-            localStorage.setItem('nova_cart_v5', JSON.stringify(cart));
+            localStorage.setItem('nova_cart_v6', JSON.stringify(cart));
             updateCartUI();
         }
 
@@ -344,12 +351,12 @@
                     count += item.qty;
                     return `
                         <div class="flex items-center gap-4 bg-slate-50 p-3 rounded-xl border">
-                            <img src="${item.img}" class="w-12 h-12 rounded object-cover">
+                            <img src="${item.img}" class="w-12 h-12 rounded object-cover" alt="">
                             <div class="flex-grow">
                                 <h4 class="font-bold text-xs">${item.name}</h4>
                                 <p class="text-xs">$${item.price.toFixed(2)} x ${item.qty}</p>
                             </div>
-                            <button onclick="removeItem(${idx})" class="text-slate-300 hover:text-red-500"><i class="fa-solid fa-trash"></i></button>
+                            <button onclick="removeItem(${idx})" class="text-slate-300 hover:text-red-500 transition"><i class="fa-solid fa-trash"></i></button>
                         </div>
                     `;
                 }).join('');
@@ -386,7 +393,11 @@
             }
         };
 
-        window.onload = () => { renderProducts(); updateCartUI(); };
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProducts();
+            updateCartUI();
+        });
     </script>
 </body>
 </html>
