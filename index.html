@@ -315,7 +315,7 @@
         let cart = JSON.parse(localStorage.getItem('nova_cart_v6')) || [];
 
         function directWhatsApp(itemName, price) {
-            let text = price > 0 ? `Hi G & A STORE, I want to order "${itemName}" ($${price.toFixed(2)}).` : `G & A STORE, I'm interested in your services.`;
+            let text = price > 0 ? `Hi G & A STORE, I want to order "${itemName}" ($₦{price.toFixed(2)}).` : `G & A STORE, I'm interested in your services.`;
             window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, '_blank');
         }
 
@@ -335,8 +335,8 @@
             const grid = document.getElementById('catalog-grid');
             grid.innerHTML = CATALOG_ITEMS.map(p => `
                 <div class="product-card bg-white rounded-3xl p-4 shadow-sm border">
-                    <img src="${p.img}" loading="lazy" class="w-full aspect-square object-cover rounded-2xl mb-4" alt="${p.name}">
-                    <h3 class="font-bold text-lg mb-1">${p.name}</h3>
+                    <img src="${p.img}" loading="lazy" class="w-full aspect-square object-cover rounded-2xl mb-4" alt="₦{p.name}">
+                    <h3 class="font-bold text-lg mb-1">₦{p.name}</h3>
                     <div class="flex justify-between items-center">
                         <span class="text-xl font-black">$${p.price.toFixed(2)}</span>
                         <button onclick="addToCart(${p.id})" class="bg-slate-900 text-white px-4 py-2 rounded-xl text-xs font-bold hover:bg-indigo-600 transition">Add to Bag</button>
