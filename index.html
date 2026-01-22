@@ -3,12 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <meta property="og:image" content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEixHpdDtaIWsO-XMmgUSBe7Oa3Qd9cdK4vf0XTKJMoW_EGuTOaQu8celpMugvkLYRFszF0z4Ayx-usyxTD294MfrkawJe1r9ruXBXKuV7MMqG1U4zpuiqbdbCTXI_P3T4JkBnY3WwfS8CV_igdwJ8pwzoNh9Svh6C2uxiQ-aaXINy_94QK6bb7EhydYioU/s320/Pink%20and%20White%20Cute%20Feminine%20Fashion%20Store%20Logo.jpg" />
-    <link rel="shortcut icon" type="image" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEixHpdDtaIWsO-XMmgUSBe7Oa3Qd9cdK4vf0XTKJMoW_EGuTOaQu8celpMugvkLYRFszF0z4Ayx-usyxTD294MfrkawJe1r9ruXBXKuV7MMqG1U4zpuiqbdbCTXI_P3T4JkBnY3WwfS8CV_igdwJ8pwzoNh9Svh6C2uxiQ-aaXINy_94QK6bb7EhydYioU/s320/Pink%20and%20White%20Cute%20Feminine%20Fashion%20Store%20Logo.jpg" />
-    <meta property="og:description" content="A store where QUALITY meets AFFORDABILITY And also procure ahead and anticipate PREMIUM QUALITY through the PRE-ORDER method direct from CHINA. Purchase from G & A store today and bask in the EUPHORIA of LUXURY" />
-    <meta property="og:title" content="⚡ A store where QUALITY meets AFFORDABILITY And also procure ahead and anticipate PREMIUM QUALITY through the PRE-ORDER method direct from CHINA. Purchase from G & A store today and bask in the EUPHORIA of LUXURY⚡" />
-    <meta content="A store where QUALITY meets AFFORDABILITY And also procure ahead and anticipate PREMIUM QUALITY through the PRE-ORDER method direct from CHINA. Purchase from G & A store today and bask in the EUPHORIA of LUXURY." property="og:description" /> 
-    <title>G & A Store | Premium Lifestyle & QUALITY</title>
+    <title>Nova Elite | Premium Lifestyle & Tech</title>
     <!-- Performance Optimization: DNS Prefetch -->
     <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
     <link rel="dns-prefetch" href="https://images.unsplash.com">
@@ -106,6 +101,22 @@
             100% { transform: scale(1.6); opacity: 0; }
         }
 
+        /* Animated WhatsApp Order Button Styles */
+        .btn-wa-order {
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            transition: all 0.3s ease;
+            animation: soft-pulse 3s infinite;
+        }
+        .btn-wa-order:hover {
+            background: linear-gradient(135deg, #20bd5a, #0e7065);
+            transform: scale(1.02);
+        }
+        @keyframes soft-pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
         @media (max-width: 640px) {
             .hero-text { font-size: 2.75rem !important; line-height: 1.2 !important; }
         }
@@ -133,10 +144,10 @@
     <nav class="glass-nav fixed top-0 w-full z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 md:h-20 flex justify-between items-center">
             <div class="flex items-center gap-2 sm:gap-3 cursor-pointer group" onclick="showView('home')">
-               <div class="w-8 h-8 sm:w-10 sm:h-10 bg-slate-900 rounded-lg sm:rounded-xl flex items-center justify-center transition-transform group-hover:rotate-12"> 
-                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEixHpdDtaIWsO-XMmgUSBe7Oa3Qd9cdK4vf0XTKJMoW_EGuTOaQu8celpMugvkLYRFszF0z4Ayx-usyxTD294MfrkawJe1r9ruXBXKuV7MMqG1U4zpuiqbdbCTXI_P3T4JkBnY3WwfS8CV_igdwJ8pwzoNh9Svh6C2uxiQ-aaXINy_94QK6bb7EhydYioU/s320/Pink%20and%20White%20Cute%20Feminine%20Fashion%20Store%20Logo.jpg"></i>
+                <div class="w-8 h-8 sm:w-10 sm:h-10 bg-slate-900 rounded-lg sm:rounded-xl flex items-center justify-center transition-transform group-hover:rotate-12">
+                    <i class="fa-solid fa-bolt-lightning text-white text-xs sm:text-sm"></i>
                 </div>
-                <span class="text-lg sm:text-xl font-bold tracking-tight uppercase brand-font">G & A <span class="text-indigo-600"> STORE</span></span>
+                <span class="text-lg sm:text-xl font-bold tracking-tight uppercase brand-font">Nova<span class="text-indigo-600">Elite</span></span>
             </div>
             
             <div class="hidden lg:flex items-center gap-10 text-[13px] font-semibold uppercase tracking-widest text-slate-500">
@@ -160,11 +171,11 @@
             <div class="max-w-7xl mx-auto">
                 <div class="relative rounded-[2rem] md:rounded-[2.5rem] bg-slate-950 overflow-hidden min-h-[450px] md:min-h-[600px] flex items-center p-6 sm:p-12 md:p-20 shadow-2xl">
                     <!-- Optimized Image Load -->
-                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjWVQjOT-jsyZXNOq64l4JLr7cDhdqSfRHhQ6UdYO21I7x0YP0f-_oCtzvcpc4Yn9kIyiQse_bsTpagyN9fEpZlqJd4jLkuoryvA_kxT2uCL8C1DVI0c8xJ5UmwEYbRHCXozNlGX9JEpSuNA9LVyH14wo9vNjo-6pwh33gNFDqWQ89gNdQIqmGSus5-dpM/s320/Green%20and%20White%20Folksy%20Christmas%20Facebook%20Cover.jpg" 
+                    <img src="https://images.unsplash.com/photo-1571771894821-ad990241274d?q=60&w=1200&auto=format&fit=crop" 
                          alt="Premium Bananas" 
                          class="absolute inset-0 w-full h-full object-cover opacity-60"
                          fetchpriority="high">
-                     <div class="absolute inset-0 bg-gradient-to-r from-slate-1000 via-slate-1000/70 to-transparent"></div> 
+                    <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/70 to-transparent"></div>
                     
                     <div class="relative z-10 max-w-2xl">
                         <div class="flex items-center gap-3 mb-4 md:mb-6">
@@ -221,15 +232,14 @@
         </div>
     </main>
 
-
-     <!-- Footer -->
+    <!-- Footer -->
     <footer class="bg-white border-t border-slate-100 py-12 px-4 sm:px-6">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
             <div class="flex items-center gap-2 group cursor-pointer" onclick="showView('home')">
                 <div class="w-8 h-8 bg-slate-900 rounded-lg flex items-center justify-center">
-                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEixHpdDtaIWsO-XMmgUSBe7Oa3Qd9cdK4vf0XTKJMoW_EGuTOaQu8celpMugvkLYRFszF0z4Ayx-usyxTD294MfrkawJe1r9ruXBXKuV7MMqG1U4zpuiqbdbCTXI_P3T4JkBnY3WwfS8CV_igdwJ8pwzoNh9Svh6C2uxiQ-aaXINy_94QK6bb7EhydYioU/s320/Pink%20and%20White%20Cute%20Feminine%20Fashion%20Store%20Logo.jpg"></i>
+                    <i class="fa-solid fa-bolt-lightning text-white text-[10px]"></i>
                 </div>
-                <span class="text-lg font-bold tracking-tight uppercase brand-font">G & A  <span class="text-indigo-600">STORE</span></span>
+                <span class="text-lg font-bold tracking-tight uppercase brand-font">Nova<span class="text-indigo-600">Elite</span></span>
             </div>
             
             <div class="flex gap-8 text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400">
@@ -238,14 +248,14 @@
                 <a href="#" class="hover:text-slate-900 transition">Shipping</a>
             </div>
 
-            <!-- <div class="flex items-center gap-5">
+            <div class="flex items-center gap-5">
                 <a href="#" class="w-10 h-10 rounded-full border border-slate-100 flex items-center justify-center text-slate-400 hover:text-indigo-600 hover:border-indigo-100 transition"><i class="fa-brands fa-instagram"></i></a>
                 <a href="#" class="w-10 h-10 rounded-full border border-slate-100 flex items-center justify-center text-slate-400 hover:text-indigo-600 hover:border-indigo-100 transition"><i class="fa-brands fa-twitter"></i></a>
                 <a href="#" class="w-10 h-10 rounded-full border border-slate-100 flex items-center justify-center text-slate-400 hover:text-indigo-600 hover:border-indigo-100 transition"><i class="fa-brands fa-facebook-f text-sm"></i></a>
-            </div> -->
+            </div>
         </div>
         <div class="max-w-7xl mx-auto mt-8 pt-8 border-t border-slate-50 text-center">
-            <p class="text-black text-xs font-medium">&copy; 2025 G & A STORE. All rights reserved.</p>
+            <p class="text-slate-400 text-xs font-medium">&copy; 2024 Nova Elite Collective. All rights reserved.</p>
         </div>
     </footer>
 
@@ -264,7 +274,7 @@
         <div class="p-6 md:p-8 bg-white border-t space-y-4 md:space-y-6">
             <div class="flex justify-between items-center px-2">
                 <span class="text-slate-500 font-semibold text-sm">Subtotal</span>
-                <span id="cart-total" class="text-xl md:text-2xl font-extrabold text-slate-900">₦00</span>
+                <span id="cart-total" class="text-xl md:text-2xl font-extrabold text-slate-900">₦0.00</span>
             </div>
             <button onclick="openCheckout()" class="w-full bg-slate-900 text-white py-4 md:py-5 rounded-2xl font-bold hover:bg-indigo-600 transition shadow-xl">
                 Check out via WhatsApp
@@ -309,13 +319,21 @@
             { id: 9, name: "Titanium Keyboard", price: 210.00, cat: "Tech", img: "https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?q=60&w=400" },
             { id: 10, name: "Minimalist Lamp", price: 65.00, cat: "Accessories", img: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?q=60&w=400" },
             { id: 11, name: "Premium Leather Pad", price: 45.00, cat: "Lifestyle", img: "https://images.unsplash.com/photo-1589182337358-2cb63099350c?q=60&w=400" },
-            { id: 12, name: "Sonic Speaker", price: 129.00, cat: "Tech", img: "https://images.unsplash.com/photo-1608156639585-340049e59c73?q=60&w=400" }
+            { id: 12, name: "Sonic Speaker", price: 129.00, cat: "Tech", img: "https://images.unsplash.com/photo-1608156639585-340049e59c73?q=60&w=400" },
+            { id: 13, name: "Studio Microphone", price: 275.00, cat: "Tech", img: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?q=60&w=400" },
+            { id: 14, name: "Smart Aroma Diffuser", price: 95.00, cat: "Lifestyle", img: "https://images.unsplash.com/photo-1602928321679-560bb453f190?q=60&w=400" },
+            { id: 15, name: "Mechanical Clock", price: 150.00, cat: "Accessories", img: "https://images.unsplash.com/photo-1563861826100-9cb868fdbe1c?q=60&w=400" },
+            { id: 16, name: "Ultra-thin Powerbank", price: 65.00, cat: "Tech", img: "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?q=60&w=400" },
+            { id: 17, name: "Wireless Charging Pad", price: 49.00, cat: "Tech", img: "https://images.unsplash.com/photo-1586816829396-80517e47148a?q=60&w=400" },
+            { id: 18, name: "Hanging Planter Set", price: 85.00, cat: "Lifestyle", img: "https://images.unsplash.com/photo-1485955900006-10f4d324d446?q=60&w=400" },
+            { id: 19, name: "Geometric Bookends", price: 40.00, cat: "Accessories", img: "https://images.unsplash.com/photo-1544640805-3536bc48f105?q=60&w=400" },
+            { id: 20, name: "Velvet Accent Pillow", price: 35.00, cat: "Lifestyle", img: "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?q=60&w=400" }
         ];
 
         let cart = JSON.parse(localStorage.getItem('nova_cart_v6')) || [];
 
         function directWhatsApp(itemName, price) {
-            let text = price > 0 ? `Hi G & A STORE, I want to order "${itemName}" ($₦{price.toFixed(2)}).` : `G & A STORE, I'm interested in your services.`;
+            let text = price > 0 ? `Hi Nova Elite, I want to order "${itemName}" (₦${price.toFixed(2)}).` : `Hi Nova Elite, I'm interested in your services.`;
             window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, '_blank');
         }
 
@@ -324,10 +342,10 @@
             const catalog = document.getElementById('catalog-view');
             if(viewId === 'home') {
                 catalog.classList.add('view-hidden');
-                setTimeout(() => { catalog.style.display = 'none'; home.style.display = 'block'; home.classList.remove('view-hidden'); }, 300);
+                setTimeout(() => { catalog.style.display = 'none'; home.style.display = 'block'; home.classList.remove('view-hidden'); window.scrollTo(0,0); }, 300);
             } else {
                 home.classList.add('view-hidden');
-                setTimeout(() => { home.style.display = 'none'; catalog.style.display = 'block'; catalog.classList.remove('view-hidden'); renderCatalog(); }, 300);
+                setTimeout(() => { home.style.display = 'none'; catalog.style.display = 'block'; catalog.classList.remove('view-hidden'); renderCatalog(); window.scrollTo(0,0); }, 300);
             }
         }
 
@@ -335,11 +353,16 @@
             const grid = document.getElementById('catalog-grid');
             grid.innerHTML = CATALOG_ITEMS.map(p => `
                 <div class="product-card bg-white rounded-3xl p-4 shadow-sm border">
-                    <img src="${p.img}" loading="lazy" class="w-full aspect-square object-cover rounded-2xl mb-4" alt="₦{p.name}">
-                    <h3 class="font-bold text-lg mb-1">₦{p.name}</h3>
-                    <div class="flex justify-between items-center">
-                        <span class="text-xl font-black">$${p.price.toFixed(2)}</span>
-                        <button onclick="addToCart(${p.id})" class="bg-slate-900 text-white px-4 py-2 rounded-xl text-xs font-bold hover:bg-indigo-600 transition">Add to Bag</button>
+                    <img src="${p.img}" loading="lazy" class="w-full aspect-square object-cover rounded-2xl mb-4" alt="${p.name}">
+                    <h3 class="font-bold text-lg mb-1">${p.name}</h3>
+                    <div class="mb-4">
+                        <span class="text-xl font-black">₦${p.price.toFixed(2)}</span>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <button onclick="addToCart(${p.id})" class="w-full bg-slate-900 text-white px-4 py-3 rounded-xl text-xs font-bold hover:bg-indigo-600 transition">Add to Bag</button>
+                        <button onclick="directWhatsApp('${p.name}', ${p.price})" class="w-full btn-wa-order text-white px-4 py-3 rounded-xl text-xs font-bold flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> Order via WhatsApp
+                        </button>
                     </div>
                 </div>
             `).join('');
@@ -352,12 +375,26 @@
                 <div class="product-card bg-white rounded-[2rem] p-4 border shadow-sm group">
                     <div class="relative overflow-hidden rounded-2xl mb-4">
                         <img src="${p.img}" loading="lazy" class="w-full aspect-square object-cover group-hover:scale-105 transition duration-500" alt="${p.name}">
-                        <div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition flex items-end p-3">
+                        <div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition flex flex-col justify-end p-3 gap-2">
                             <button onclick="addToCart(${p.id})" class="w-full bg-slate-900 text-white py-3 rounded-xl font-bold text-xs hover:bg-indigo-600 transition">Add to Bag</button>
+                            <button onclick="directWhatsApp('${p.name}', ${p.price})" class="w-full btn-wa-order text-white py-3 rounded-xl font-bold text-xs flex items-center justify-center gap-2">
+                                <i class="fa-brands fa-whatsapp"></i> Order via WhatsApp
+                            </button>
                         </div>
                     </div>
-                    <h3 class="font-bold text-base truncate">${p.name}</h3>
-                    <span class="text-lg font-black">$${p.price.toFixed(2)}</span>
+                    <div class="flex flex-col">
+                        <h3 class="font-bold text-base truncate">${p.name}</h3>
+                        <div class="flex justify-between items-center mt-1">
+                            <span class="text-lg font-black">₦${p.price.toFixed(2)}</span>
+                        </div>
+                        <!-- Responsive visible buttons for mobile/touch -->
+                        <div class="flex flex-col gap-2 mt-4 lg:hidden">
+                             <button onclick="addToCart(${p.id})" class="w-full bg-slate-900 text-white py-2.5 rounded-lg font-bold text-[10px] uppercase tracking-wider">Add to Bag</button>
+                             <button onclick="directWhatsApp('${p.name}', ${p.price})" class="w-full btn-wa-order text-white py-2.5 rounded-lg font-bold text-[10px] flex items-center justify-center gap-1.5 uppercase tracking-wider">
+                                <i class="fa-brands fa-whatsapp"></i> WhatsApp Order
+                            </button>
+                        </div>
+                    </div>
                 </div>
             `).join('');
         }
@@ -387,13 +424,13 @@
                             <img src="${item.img}" class="w-12 h-12 rounded object-cover" alt="">
                             <div class="flex-grow">
                                 <h4 class="font-bold text-xs">${item.name}</h4>
-                                <p class="text-xs">$${item.price.toFixed(2)} x ${item.qty}</p>
+                                <p class="text-xs">₦${item.price.toFixed(2)} x ${item.qty}</p>
                             </div>
                             <button onclick="removeItem(${idx})" class="text-slate-300 hover:text-red-500 transition"><i class="fa-solid fa-trash"></i></button>
                         </div>
                     `;
                 }).join('');
-            document.getElementById('cart-total').innerText = `$${total.toFixed(2)}`;
+            document.getElementById('cart-total').innerText = `₦${total.toFixed(2)}`;
             document.getElementById('cart-count').innerText = count;
             document.getElementById('cart-item-count').innerText = count;
         }
